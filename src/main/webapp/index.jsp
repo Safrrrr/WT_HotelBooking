@@ -1,24 +1,35 @@
-<%@ page import="java.util.List" %>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<html lang="en">
+<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%@ taglib prefix="custom" tagdir="/WEB-INF/tags" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+
+<html>
 <head>
-    <meta charset="UTF-8">
     <title>HotelBooking</title>
 </head>
 <body>
-<!-- header -->
-<div>
-    <h1>Welcome</h1>
 
+<c:set var="text">
+    <fmt:message key="welcome"/>
+</c:set>
+
+
+<div class="paper container" style="min-height: 100vh; padding-top: 220px">
+    <h3 class="text-center">
+        <fmt:message key="please"/>
+        <form action="<c:url value="/controller"/>" method="get">
+            <input type="hidden" name="command" value="to-signin">
+            <input type="submit" name="submit" value="<fmt:message key="button.signin"/>  ">
+        </form>
+
+        <fmt:message key="or"/>
+        <form action="<c:url value="/controller"/>" method="get">
+            <input type="hidden" name="command" value="to-signup">
+            <input type="submit" name="submit" value="<fmt:message key="button.signup"/> ">
+        </form>
+    </h3>
 </div>
 
-<div>       <!-- content -->
-    <div>    <!-- buttons holder -->
-        <button onclick="location.href='/signin'">Sign In</button>
-
-        <button onclick="location.href='/signup'">Sign Up</button>
-
-    </div>
-</div>
 </body>
 </html>
+

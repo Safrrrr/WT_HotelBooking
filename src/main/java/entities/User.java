@@ -5,12 +5,19 @@ public class User {
     private String surname;
     private String login;
     private int password;
+    private String email;
+    private boolean isAdmin;
 
-    public User(String name, String surname, String password, String login) {
+    public User() {
+    }
+
+    public User(String name, String surname, String password, String login, String email, boolean isAdmin) {
         this.name = name;
         this.surname = surname;
         this.login = login;
         this.password = password.hashCode();
+        this.email = email;
+        this.isAdmin = isAdmin;
     }
 
     public String getName() {
@@ -25,9 +32,7 @@ public class User {
         this.login = login;
     }
 
-    public String getLogin() {
-        return login;
-    }
+    public String getLogin() { return login; }
 
     public void setSurname(String surname) {
         this.surname = surname;
@@ -45,8 +50,19 @@ public class User {
         this.password = password;
     }
 
-    @Override
-    public String toString() {
-        return  name + ' ' + surname + ", " + login;
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public boolean isAdmin() {
+        return isAdmin;
+    }
+
+    public void setAdmin(boolean isAdmin) {
+        this.isAdmin = isAdmin;
     }
 }
