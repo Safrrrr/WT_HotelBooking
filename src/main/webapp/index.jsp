@@ -8,12 +8,14 @@
     <title>HotelBooking</title>
 </head>
 <body>
+<fmt:setLocale value="${sessionScope.lang}"/>
+<fmt:setBundle basename="text"/>
 
 <c:set var="text">
     <fmt:message key="welcome"/>
 </c:set>
 
-
+<custom:header text="${text}"/>
 <div class="paper container" style="min-height: 100vh; padding-top: 220px">
     <h3 class="text-center">
         <fmt:message key="please"/>
